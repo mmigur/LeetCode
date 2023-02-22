@@ -7,5 +7,3 @@ def twoSum(nums, target):
                         temp_index.append(j)
 
         return temp_index
-
-print("Hello, word!")
