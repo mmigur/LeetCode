@@ -1,15 +1,17 @@
 def isValid(s):
         stack = []
-        brackets_dict = {
-                '(': ')',
-                '{': '}',
-                '[': ']'
-        }
 
-        for char in s:
-                if char in brackets_dict:
-                        stack.append(char)
-                elif not stack or brackets_dict[stack.pop()] != char:
+        for i in s:
+                if i not in ')]}':
+                        stack.append(i)
+                elif stack:
+                        x = stack.pop()
+                        if (x == '(' and i != ')') or (x == '[' and i != ']') or (x == '{' and i != '}'):
+                                return False
+                else:
                         return False
 
-        return len(stack) == 0
+        return False if stack else True
+
+print(isValid('{}{}{}{}'))
+print(isValid('{{{}'))
