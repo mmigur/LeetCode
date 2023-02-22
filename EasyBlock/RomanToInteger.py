@@ -21,3 +21,5 @@ def romanToInt(s):
                         if s[i] == j:
                                 result += data[j]
         return result
+
+print('XXX')
